@@ -25,7 +25,7 @@ jobs:
     - run: npm test -- --browsers=ChromeHeadless --watch=false
     - run: npm run build --if-present
     - run: ls -l
-    - run: tar -cvf build ./dist && gzip -c build > github-pages & rm -rf dist/
+    - run: tar -cvf build ./dist && gzip -c build > github-pages
     - name: Commit files
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
