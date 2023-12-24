@@ -12,32 +12,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+        fetch-depth: 0
     - name: Build
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
         cache: 'npm'
-        persist-credentials: false
-        fetch-depth: 0
     - run: npm install
     - run: npm test -- --browsers=ChromeHeadless --watch=false
     - run: npm run build --if-present -- --output-path rendered
-  push:
-    if: "!contains(github.event.head_commit.message, 'Rendered changes')"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
-          fetch-depth: 0
-      - name: Commit files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add rendered/
-          git commit -a -m "Rendered changes"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+    - name: Commit files
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add rendered/
+        git commit -a -m "Rendered changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
