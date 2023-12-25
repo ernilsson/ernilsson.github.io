@@ -12,42 +12,6 @@ export class FeedService {
       path: "assets/posts/demo.md",
       title: "Demo"
     },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
-    {
-      author: "ernilsson",
-      published: Date.parse("2023-12-25"),
-      path: "assets/posts/demo.md",
-      title: "Demo"
-    },
   ];
 
   get(page: number): Post[] {

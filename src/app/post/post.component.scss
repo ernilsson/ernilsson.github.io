@@ -21,20 +21,33 @@
 
   &__title {
     &__heading {
-      color: $title !important;
+      color: $title;
       text-align: center;
       font-weight: 500;
       font-size: 3rem;
     }
   }
+}
 
-  &__body {
-    h1, h2, h3, h4, h5, h6 {
-      color: $heading;
-    }
+.post__body {
+  h1, h2, h3, h4, h5, h6 {
+    color: $heading;
+    font-weight: 500;
+  }
 
-    p {
-      color: $paragraph;
+  p {
+    color: $paragraph;
+  }
+
+  pre {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+
+    > * {
+      text-shadow: none;
     }
   }
 }
