@@ -20,11 +20,8 @@ jobs:
       run: npm test -- --browsers=ChromeHeadless --watch=false
     - name: Build
       run: npm run build --if-present
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v4
     - name: Upload Artifact
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v1
       with:
         path: dist
   deploy:
@@ -40,4 +37,4 @@ jobs:
     steps:
     - name: Deploy
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v3
