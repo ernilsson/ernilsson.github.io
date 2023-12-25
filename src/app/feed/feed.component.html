@@ -1,0 +1,8 @@
+<div class="feed">
+  <app-post
+    class="feed__post"
+    *ngFor="let p of posts"
+    [author]="p.author"
+    [path]="p.path"
+  ></app-post>
+</div>

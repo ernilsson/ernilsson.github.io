@@ -1,14 +1,11 @@
 <article class="post">
   <header class="post__header">
     <span class="post__header__author">{{ author }}</span>
-    <span class="post__header__published-date">{{ formattedPublicationDate() }}</span>
   </header>
   <span class="post__separator"></span>
   <div class="post__title">
     <h1 class="post__title__heading">Ode to Binary Search Trees</h1>
   </div>
-  <h1>1. Introduction</h1>
-  <p>
-    As many computer science students are aware, Binary Search Trees (BST) is one of the very first data structures to be encountered in the algorithms module. It is an effective starting point as it provides the student with the possibility to learn about trees in general, tree traversal and of course the fundamentals of the BST itself which gracefully guides us towards other types of trees.
-  </p>
+  <main class="post__body" [innerHTML]="content">
+  </main>
 </article>

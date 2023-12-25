@@ -1,18 +1,25 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {MarkdownService} from "ngx-markdown";
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   @Input({ required: true })
-  author!: String;
+  author!: string;
 
   @Input({ required: true })
-  publishedDate!: Date;
+  path!: string;
 
-  formattedPublicationDate(): String {
-    return `${this.publishedDate.getDay()}-${this.publishedDate.getMonth()}-${this.publishedDate.getFullYear()}`
+  content: string = "";
+
+  constructor(private service: MarkdownService) {}
+
+  ngOnInit() {
+    this.service.getSource(this.path).subscribe(async data => {
+        this.content = await this.service.parse(data);
+    })
   }
 }

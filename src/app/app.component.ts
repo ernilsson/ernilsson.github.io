@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ernilsson.github.io';
-  post = {
-    author: "ernilsson",
-    date: new Date()
-  };
 }
