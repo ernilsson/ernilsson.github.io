@@ -5,18 +5,11 @@ on:
 
 jobs:
   build:
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: https://ernilsson.github.io/
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-        fetch-depth: 0
     - name: Build
       uses: actions/setup-node@v3
       with:
@@ -29,6 +22,13 @@ jobs:
       uses: actions/upload-pages-artifact@v2
       with:
         path: dist
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
