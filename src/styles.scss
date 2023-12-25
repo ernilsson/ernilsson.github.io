@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import "colors";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Fira+Code:wght@300;400;500;600;700&family=Reenie+Beanie&display=swap');
+
+body {
+  font-size: 1.8rem;
+  background: $background;
+  font-family: 'Fira Code', monospace;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 55%;
+  }
+}

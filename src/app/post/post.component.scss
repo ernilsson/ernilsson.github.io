@@ -1,0 +1,38 @@
+@import "../../colors";
+
+.post {
+  max-width: 80rem;
+  background: $background-dark;
+  padding: 3.2rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $muted-dark;
+    margin-bottom: 1.2rem;
+  }
+
+  &__separator {
+    border-top: 3px dotted $muted-dark;
+    width: 100%;
+    display: block;
+  }
+
+  &__title {
+    &__heading {
+      color: $title !important;
+      text-align: center;
+      font-weight: 500;
+      font-size: 3rem;
+    }
+  }
+
+  h1 {
+    color: $heading;
+  }
+
+  p {
+    color: $paragraph;
+  }
+}
