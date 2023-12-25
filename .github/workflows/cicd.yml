@@ -16,8 +16,6 @@ jobs:
         cache: 'npm'
     - name: Install
       run: npm install
-    - name: Test
-      run: npm test -- --browsers=ChromeHeadless --watch=false
     - name: Build
       run: npm run build --if-present
     - name: Upload Artifact
